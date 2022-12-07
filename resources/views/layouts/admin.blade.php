@@ -37,6 +37,7 @@
     @stack('select2-autocompelete')
     @stack('multiple')
     @stack('autoSerialNumber')
+    @stack('echartBar')
 </body>
 
 </html>
