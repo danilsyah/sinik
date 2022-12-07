@@ -122,12 +122,13 @@ class PemeriksaanController extends Controller
 
     public function cekTagihan($id){
         $pemeriksaanDetails = PemeriksaanDetail::with(['pemeriksaan', 'obat', 'tindakan'])->where('pemeriksaan_id', '=', $id)->get();
-        // dd($pemeriksaanDetail);
+        // dd($pemeriksaanDetails);
 
         return view('pages.tagihan.index',[
-            'pemeriksaanDetails' => $pemeriksaanDetails
+            'pemeriksaanDetails' => $pemeriksaanDetails,
         ]);
 
 
     }
+
 }

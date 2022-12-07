@@ -19,4 +19,8 @@ class Obat extends Model
         return $this->hasMany(PemeriksaanDetail::class);
     }
 
+    public function totalHarga() {
+        return $this->sum('harga');
+    }
+
 }

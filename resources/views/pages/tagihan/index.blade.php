@@ -23,7 +23,10 @@
     <div class="col-md-12 mb-4">
         <div class="card text-left">
             <div class="card-body">
-                <div class="card-title mb-3">Tagihan </div>
+                <div class="card-title mb-3">Tagihan : Rp. <span class="total">{{ $pemeriksaanDetails->sum("obat.harga") + $pemeriksaanDetails->sum("tindakan.harga")  }}</span>  </div>
+                <label>Dibayarkan : </label>
+                <input type="number" class="form-control inputdibayarkan" name="dibayarkan">
+                <button class="pay-button btn btn-danger mt-2">Bayar</button>
                 <hr>
                 <div class="table-responsive">
                     <table id="zero_configuration_table" class="display table table-striped table-bordered"
@@ -36,6 +39,7 @@
                                 <th>Obat</th>
                                 <th>Harga Obat</th>
                                 <th>Tindakan</th>
+                                <th>Tindakan Harga</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -46,7 +50,8 @@
                                 <td>{{ $pemeriksaanDetail->pemeriksaan->employee->name }}</td>
                                 <td>{{ $pemeriksaanDetail->obat->nama}}</td>
                                 <td>{{ $pemeriksaanDetail->obat->harga}}</td>
-                                <td>{{ $pemeriksaanDetail->tindakan_id}}</td>
+                                <td>{{ $pemeriksaanDetail->tindakan ? $pemeriksaanDetail->tindakan->nama : "kosong"}}</td>
+                                <td>{{ $pemeriksaanDetail->tindakan ? $pemeriksaanDetail->tindakan->harga : "kosong"}}</td>
                             </tr>
                             @endforeach
                         </tbody>
@@ -61,24 +66,24 @@
 
 @push('confirm-delete')
 <script>
-    $('.delete-confirm').click(function (event) {
+    $('.pay-button').click(function (event) {
         var form = $(this).closest("form");
-        var name = $(this).data("name");
+        var dibayar = $(".inputdibayarkan").val();
+        var total = $(".total").text();
+        var kembalian = dibayar - total
         event.preventDefault();
-        swal({
-                title: `Are you sure you want to delete ${name}?`,
-                text: "If you delete this, it will be gone forever.",
+        if (dibayar != null && dibayar != ''){
+            swal({
+                title: `Kembalian Rp.${kembalian}`,
                 icon: "warning",
-                showCancelButton: true,
+                showCancelButton: false,
                 confirmButtonColor: '#3085d6',
                 cancelButtonColor: '#d33',
-                confirmButtonText: 'Yes, delete it!'
+                confirmButtonText: 'OK'
             })
-            .then((willDelete) => {
-                if (willDelete) {
-                    form.submit();
-                }
-            });
+        }
+        
+            
     });
 
 </script>

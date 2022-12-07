@@ -27,4 +27,9 @@ class PemeriksaanDetail extends Model
     public function tindakan(){
         return $this->belongsTo(Tindakan::class);
     }
+
+    // public function getTotalHargaObat()
+    // {
+    //     return $this->obat->sum('harga');
+    // }
 }
