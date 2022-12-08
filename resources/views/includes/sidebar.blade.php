@@ -28,20 +28,6 @@
 				</a>
 				<div class="triangle"></div>
 			</li>
-			<li class="nav-item">
-				<a class="nav-item-hold" href="">
-					<i class="nav-icon i-Inbox-Out"></i>
-					<span class="nav-text">Info Tagihan</span>
-				</a>
-				<div class="triangle"></div>
-			</li>
-			<li class="nav-item">
-				<a class="nav-item-hold" href="">
-					<i class="nav-icon i-Inbox-Out"></i>
-					<span class="nav-text">Laporan</span>
-				</a>
-				<div class="triangle"></div>
-			</li>
 		</ul>
 	</div>
 
@@ -71,19 +57,19 @@
 					<span class="item-name">Obat</span>
 				</a>
 			</li>
-			<li class="nav-item">
-				<a class="nav-item-hold" href="#">
-					<i class="nav-icon i-Data-Center"></i>
-					<span class="item-name">Wilayah</span>
-				</a>
-				<div class="triangle"></div>
-			</li>
-            <ul>
-                <li class="nav-item"><a href="{{ route('provinces.index') }}">Provinsi</a></li>
-                <li class="nav-item"><a href="{{ route('regencies.index') }}">Kabupaten/Kota</a></li>
-                <li class="nav-item"><a href="{{ route('districts.index') }}">Kecamatan</a></li>
-                <li class="nav-item"><a href="{{ route('villages.index') }}">Kelurahan/Desa</a></li>
-            </ul>
+            <li class="nav-item dropdown-sidemenu">
+                <a href="#">
+                    <i class="nav-icon i-Split-Horizontal-2-Window"></i>
+                    <span class="item-name">Wilayah</span>
+                    <i class="dd-arrow i-Arrow-Down"></i>
+                </a>
+                <ul class="submenu">
+                    <li><a href="{{ route('provinces.index') }}">Provinsi</a></li>
+                    <li><a href="{{ route('regencies.index') }}">Kabupaten/Kota</a></li>
+                    <li><a href="{{ route('districts.index') }}">Kecamatan</a></li>
+                    <li><a href="{{ route('villages.index') }}">Kelurahan/Desa</a></li>
+                </ul>
+            </li>
 		</ul>
 	</div>
 
