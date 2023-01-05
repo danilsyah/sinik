@@ -26,17 +26,5 @@ class CheckRole
         }
         return $next($request);
 
-
-        // $roles = array_slice(func_get_args(), 2);
-        // dd($roles);
-
-        // foreach ($roles as $role) {
-        //     $user = \Auth::user()->role->nama_rule;
-        //     if( $user == $role){
-        //         return $next($request);
-        //     }
-        // }
-
-        // return redirect('/');
     }
 }

@@ -48,7 +48,6 @@ class User extends Authenticatable
     }
 
     public function punyaRule($nama_rule){
-        // dd($this->role->nama_rule == $nama_rule);
         if($this->role->nama_rule == $nama_rule){
             return true;
         }

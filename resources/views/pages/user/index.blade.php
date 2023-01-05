@@ -48,9 +48,9 @@
                                 <td>{{ $user->role->nama_rule }}</td>
                                 <td>
                                     @if (Auth::user()->role->nama_rule == 'ADMIN')
-                                    <a href="{{ route('users.edit', $user->id) }}" class="btn btn-outline-success">
+                                    {{-- <a href="{{ route('users.edit', $user->id) }}" class="btn btn-outline-success">
                                         Edit
-                                    </a>
+                                    </a> --}}
                                     <form action="{{ route('users.destroy', $user->id )}}" method="POST"
                                         class="d-inline">
                                         @method('delete')
