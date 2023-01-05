@@ -16,16 +16,22 @@ class PemeriksaanDetail extends Model
 
     protected $table = 'pemeriksaan_details';
 
+    // this field must type date yyyy-mm-dd HH:mm:ss
+    protected $dates = [
+        'created_at',
+        'updated_at',
+    ];
+
     public function pemeriksaan(){
-        return $this->belongsTo(Pemeriksaan::class);
+        return $this->belongsTo(Pemeriksaan::class, 'pemeriksaan_id', 'id');
     }
 
     public function obat(){
-        return $this->belongsTo(Obat::class);
+        return $this->belongsTo(Obat::class, 'obat_id', 'id');
     }
 
     public function tindakan(){
-        return $this->belongsTo(Tindakan::class);
+        return $this->belongsTo(Tindakan::class, 'tindakan_id', 'id');
     }
 
     // public function getTotalHargaObat()

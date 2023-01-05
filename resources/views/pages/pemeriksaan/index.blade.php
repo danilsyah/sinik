@@ -23,7 +23,7 @@
     <div class="col-md-12 mb-4">
         <div class="card text-left">
             <div class="card-body">
-                <div class="card-title mb-3">Pasien List</div>
+                <div class="card-title mb-3">Pemeriksaan Pasien</div>
                 <a href="{{ route('pemeriksaans.create') }}" class="btn btn-primary btn-rounded mb-1"
                     style="width: 100%">+Add</a>
                 <hr>

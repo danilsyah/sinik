@@ -40,11 +40,11 @@ class User extends Authenticatable
 
     // inverse one to Many ke table roles
     public function role(){
-        return $this->belongsTo(Role::class, 'role_id');
+        return $this->belongsTo(Role::class, 'role_id','id');
     }
 
     public function employee(){
-        return $this->belongsTo(Employee::class);
+        return $this->belongsTo(Employee::class, 'employee_id', 'id');
     }
 
     public function punyaRule($nama_rule){

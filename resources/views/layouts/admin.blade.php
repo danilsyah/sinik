@@ -38,6 +38,7 @@
     @stack('multiple')
     @stack('autoSerialNumber')
     @stack('echartBar')
+    @stack('pembayaran')
 </body>
 
 </html>

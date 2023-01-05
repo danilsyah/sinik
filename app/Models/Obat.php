@@ -12,11 +12,17 @@ class Obat extends Model
 
     protected $table = 'obats';
 
+    // this field must type date yyyy-mm-dd HH:mm:ss
+    protected $dates = [
+        'created_at',
+        'updated_at',
+    ];
+
     protected $guarded = [];
 
 
     public function pemeriksaanDetail(){
-        return $this->hasMany(PemeriksaanDetail::class);
+        return $this->hasMany(PemeriksaanDetail::class, 'obat_id');
     }
 
     public function totalHarga() {
